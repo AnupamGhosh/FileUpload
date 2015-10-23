@@ -1,0 +1,22 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>All Files</h2>
+
+{% for file in files %}
+<div class="row">
+    <div class="col-md-3">
+    <a href="file:///{{ MEDIA_URL }}{{ file.upload }}">
+        {{ file.upload }}
+    </a>
+    </div>
+    
+    <div class="col-md-1">
+         <a href="delete/{{ file.id }}">Remove</a>
+    </div>
+
+</div>
+{% endfor %}
+
+{% endblock %}
